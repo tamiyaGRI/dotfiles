@@ -1,4 +1,10 @@
-alias ls='ls -FG'
+if [[ `uname` == "Linux" ]]; then
+    alias ls='ls -F --color=auto'
+elif [[ `uname` == "Darwin" ]]; then
+    # Mac のとき
+    alias ls='ls -FG'
+fi
+
 alias python='python3'
 
 source ~/dotfiles/git-prompt.sh
